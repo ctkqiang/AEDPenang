@@ -60,7 +60,7 @@ http://localhost:3000
 
 1. 克隆仓库
 ```bash
-git clone https://github.com/yourusername/AEDPenang.git
+git clone https://github.com/ctkqiang/AEDPenang.git
 ```
 
 2. 安装依赖
