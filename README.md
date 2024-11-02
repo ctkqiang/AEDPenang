@@ -110,15 +110,15 @@ interface AED {
 ## 👨‍💻 Contact
 
 For services or inquiries, contact:
-- Email: johnmelodymel@qq.com
+- Email: ctkqiang96@zohomail.cn
 
 ## 🏢 Company
 
-上饶满星科技有限公司 (Shangrao Manxing Technology Co., Ltd)
+上饶满星科技 (Man Xing Enterprise)
 
 ## 📄 License
 
-Copyright 2024 上饶满星科技 (Man Xing Enterprise)
+Copyright 2025 上饶满星科技 (Man Xing Enterprise)
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
