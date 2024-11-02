@@ -1,13 +1,15 @@
 import { Router } from 'express';
+import { GetAED } from '../controllers/get_data';
+import { AED } from '../models/aed_model';
 
 const aed = Router();
 
 aed.get('/all', (req, res) => {
-  res.send('List of users');
-});
+  const data = GetAED<AED>();
 
-aed.get('/', (req, res) => {
-  res.send('test');
+  console.info(`GET::[/aed/all]`);
+
+  res.send(data);
 });
 
 export default aed;

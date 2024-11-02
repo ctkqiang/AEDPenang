@@ -7,7 +7,8 @@
     "images_url": [
       "https://lh3.googleusercontent.com/p/AF1QipN14xozgaHSihjK0ZeY72G0cfMLdcw32ePS8cDV=s1360-w1360-h1020",
       "https://lh3.googleusercontent.com/p/AF1QipMEvn34mF503Gs8j2Amot9UpxnofceLJv4BYuIT=s1360-w1360-h1020"
-    ]
+    ],
+    "poi": ["Marriott Hotel"]
   },
   {
     "id": 1,
@@ -26,5 +27,37 @@
     "images_url": [
       "https://lh3.googleusercontent.com/p/AF1QipNK4aJ0KHM4ueHdFiiN8-2HPSa3WoImGHoRdzNh=s1360-w1360-h1020"
     ]
+  },
+  {
+    "id": 3,
+    "name": "AED @ Karpal Singh Drive",
+    "address": "Karpal Singh Drive, 11600 George Town, Pulau Pinang",
+    "coordinates": ["5.398160", "100.323760"],
+    "images_url": [
+      "https://www.buletinmutiara.com/wp-content/uploads/2021/11/AED-Karpal-Singh-Drive.jpg"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "AED @ Karpal Singh Drive",
+    "address": "Karpal Singh Drive, 11600 George Town, Pulau Pinang",
+    "coordinates": ["5.398160", "100.323760"],
+    "images_url": [
+      "https://www.buletinmutiara.com/wp-content/uploads/2021/11/AED-Karpal-Singh-Drive.jpg"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "AED @ Sri Ramar Temple",
+    "address": "Solok York, 10450 George Town, Pulau Pinang",
+    "coordinates": ["5.416670", "100.311670"],
+    "images_url": []
+  },
+  {
+    "id": 5,
+    "name": "AED @ Taman Botani",
+    "address": "Jalan Kebun Bunga, 10350 George Town, Pulau Pinang",
+    "coordinates": ["5.431940", "100.290280"],
+    "images_url": []
   }
 ]
