@@ -118,6 +118,7 @@ For services or inquiries, contact:
 
 ## 📄 License
 
+```
 Copyright 2025 上饶满星科技 (Man Xing Enterprise)
 
 Licensed under the Apache License, Version 2.0 (the "License");
@@ -131,3 +132,4 @@ distributed under the License is distributed on an "AS IS" BASIS,
 WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
+```
