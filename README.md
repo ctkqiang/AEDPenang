@@ -74,7 +74,7 @@ npm install
 npm run dev
 ```
 
-服务器将在 `http://localhost:3000` 启动
+服务器将在 `https://localhost` 启动
 
 ## 💻 开发
 
