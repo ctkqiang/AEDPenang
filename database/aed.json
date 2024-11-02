@@ -1,0 +1,30 @@
+[
+  {
+    "id": 0,
+    "name": "AED @ Marriott Penang",
+    "address": "55, Persiaran Gurney, George Town, 10250 George Town, Pulau Pinang",
+    "coordinates": ["5.436040", "100.313060"],
+    "images_url": [
+      "https://lh3.googleusercontent.com/p/AF1QipN14xozgaHSihjK0ZeY72G0cfMLdcw32ePS8cDV=s1360-w1360-h1020",
+      "https://lh3.googleusercontent.com/p/AF1QipMEvn34mF503Gs8j2Amot9UpxnofceLJv4BYuIT=s1360-w1360-h1020"
+    ]
+  },
+  {
+    "id": 1,
+    "name": "AED @ Gurney Drive",
+    "address": "190, Persiaran Gurney, 10250 George Town, Pulau Pinang",
+    "coordinates": ["5.436040", "100.313060"],
+    "images_url": [
+      "https://lh3.googleusercontent.com/p/AF1QipNK4aJ0KHM4ueHdFiiN8-2HPSa3WoImGHoRdzNh=s1360-w1360-h1020"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "AED @ Gurney Drive",
+    "address": "190, Persiaran Gurney, 10250 George Town, Pulau Pinang",
+    "coordinates": ["5.436040", "100.313060"],
+    "images_url": [
+      "https://lh3.googleusercontent.com/p/AF1QipNK4aJ0KHM4ueHdFiiN8-2HPSa3WoImGHoRdzNh=s1360-w1360-h1020"
+    ]
+  }
+]

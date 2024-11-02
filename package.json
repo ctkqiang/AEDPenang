@@ -1,0 +1,38 @@
+{
+  "name": "aedpenang",
+  "version": "1.0.0",
+  "description": "AED",
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "pm2 start dist/index.js --watch",
+    "dev": "nodemon src/index.ts",
+    "build": "tsc",
+    "test": "mocha --require ts-node/register test/**/*.test.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git"
+  },
+  "keywords": [
+    "AED",
+    "Penang"
+  ],
+  "author": "钟智强",
+  "license": "Apache-2.0",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "fs": "^0.0.1-security",
+    "pm2": "^5.4.2"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.17",
+    "@types/node": "^20.6.0",
+    "nodemon": "^3.1.7",
+    "pm2": "^5.4.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.6.3"
+  }
+}
