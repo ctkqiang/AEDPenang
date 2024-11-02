@@ -3,6 +3,12 @@ import express, { Application } from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
 
+/**
+ * @description 服务器启动配置文件
+ * 负责:
+ * 1. 设置服务器端口
+ * 2. 启动服务器监听
+ */
 const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
