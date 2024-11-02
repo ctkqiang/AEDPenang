@@ -25,17 +25,3 @@ export function GetAED<T>(): T | null
 
   return null;
 }
-
-
-// Example usage
-// npx ts-node ./src/controllers/get_data.ts
-const aedData = GetAED();
-
-if (aedData)
-{
-  console.log(aedData);
-}
-else
-{
-  console.log('No AED data found.');
-}

@@ -13,12 +13,10 @@ app.use(bodyParser.json());
 app.use('/aed', aed);
 
 app.get('/', (req, res) => {
-    res.send({
-        route: "/",
-        message: "Hello World From 上饶满星科技!",
-    message_from_developer: "For services do contact me johnmelodymel@qq.com"
-  });    
+  res.send({
+    message: 'Hello World From 上饶满星科技!',
+    message_from_developer: 'For services do contact me ctkqiang96@zohomail.cn'
+  });
 });
-
 
 export default app;
