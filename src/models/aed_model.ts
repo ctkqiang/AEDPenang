@@ -2,7 +2,8 @@
  * @description AED 数据模型接口定义
  * 定义了 AED 位置信息的数据结构
  */
-export interface AED {
+export interface AED
+{
   id: number;                         // 位置的唯一标识符
   name: string;                       // 位置名称
   address: string;                    // 位置的完整地址

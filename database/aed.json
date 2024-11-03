@@ -34,17 +34,17 @@
     "address": "Karpal Singh Drive, 11600 George Town, Pulau Pinang",
     "coordinates": ["5.398160", "100.323760"],
     "images_url": [
-      "",
-      ""
+      "https://github.com/ctkqiang/AEDPenang/blob/main/database/images/IMG_2178.JPG?raw=true",
+      "https://github.com/ctkqiang/AEDPenang/blob/main/database/images/IMG_2179.JPG?raw=true"
     ]
   },
   {
     "id": 4,
     "name": "AED @ Karpal Singh Drive",
-    "address": "Karpal Singh Drive, 11600 George Town, Pulau Pinang",
-    "coordinates": ["5.398160", "100.323760"],
+    "address": "3, Karpal Singh Dr, Georgetown, 11600 George Town, Penang",
+    "coordinates": ["5.399480", "100.330680"],
     "images_url": [
-      "https://www.buletinmutiara.com/wp-content/uploads/2021/11/AED-Karpal-Singh-Drive.jpg"
+      "https://lh3.googleusercontent.com/p/AF1QipNR9UhLwTFcBUBk_YFvccyO2QT3s8KfMLJ6LWEl=s1360-w1360-h1020"
     ]
   },
   {
@@ -62,10 +62,101 @@
     "images_url": []
   },
   {
-    "id": 5,
-    "name": "AED @ Taman Botani",
-    "address": "Jalan Kebun Bunga, 10350 George Town, Pulau Pinang",
-    "coordinates": ["5.431940", "100.290280"],
+    "id": 6,
+    "name": "AED @ Penang Hill Upper Station",
+    "address": " Upper Station, Penang Hill, Bukit Bendera, 11300 Bukit Bendera, Penang",
+    "coordinates": ["5.415860", "100.274110"],
+    "images_url": [
+      "https://lh3.googleusercontent.com/p/AF1QipOpEOwsQgvvh0XSHfi7j0eDO643VihqSz7KyUkj=s1360-w1360-h1020"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "AED @ Station 84",
+    "address": "C7GJ+Q6, George Town, Pulau Pinang",
+    "coordinates": ["5.415860", "100.274110"],
+    "images_url": [
+      "https://lh3.googleusercontent.com/p/AF1QipOpEOwsQgvvh0XSHfi7j0eDO643VihqSz7KyUkj=s1360-w1360-h1020"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "AED @ Pekaka Square",
+    "address": "267, Lebuh Pekaka 1, Taman Pekaka, 11700 Gelugor, Pulau Pinang",
+    "coordinates": ["5.349500", "100.294950"],
+    "images_url": [
+      "https://lh3.googleusercontent.com/p/AF1QipM5q9J-4ju7n7JdU9CZYtVTYXEbaGwYXiK583TD=s1360-w1360-h1020",
+      "https://lh3.googleusercontent.com/p/AF1QipP2AuLUNLkbGhFZQ1zki2lsTdvUfZp_I24d2Rka=s1360-w1360-h1020"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "AED @ Penang Sentral (Level 2 First Aid Room)",
+    "address": "10, Jalan Metcher, 12000 Butterworth, Pulau Pinang",
+    "coordinates": ["5.395600", "100.366530"],
+    "images_url": [
+      "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=2KzER_TkHqLNbBLooGXnWQ&cb_client=search.gws-prod.gps&yaw=76.89035&pitch=0&thumbfov=100&w=1040&h=350"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "AED @ St. John Ambulance HQ",
+    "address": "24a, Jalan Grove, 11400 George Town, Pulau Pinang",
+    "coordinates": ["5.4172", "100.3218"],
+    "images_url": [
+      "https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=y-mbiG6NwvFcylADfp_wDQ&cb_client=search.gws-prod.gps&yaw=334.42902&pitch=0&thumbfov=100&w=1040&h=350"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "AED @ SRJK Han Chiang",
+    "address": "19K, 1st Floor, Lebar Batu Lancang, Taman Sri Damai, 11600 Jelutong, Penang",
+    "coordinates": ["5.3902", "100.3077"],
     "images_url": []
+  },
+  {
+    "id": 12,
+    "name": "AED by Pantai Hospital Penang @Jambatan Harapan - Automated External Defibrillator",
+    "address": "Jambatan Pulau Pinang, Jambatan Sultan Abdul Halim Mu'adzam Shah, Gelugor, 11700 Penang",
+    "coordinates": ["5.3543", "100.3190"],
+    "images_url": []
+  },
+  {
+    "id": 13,
+    "name": "AED @ Spice Arena",
+    "address": "SPICE Arena Jalan Tun Dr Awang 11900 Bayan Lepas, Pulau Pinang",
+    "coordinates": ["5.3336", "100.2829"],
+    "images_url": [
+      "https://www.colorkinetics.com/content/dam/color-kinetics/showcases/setia-spice/setia-spice-convention-centre6.jpg"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "AED @ Kong Min Cawangan 2",
+    "address": "1273, Jln Paya Terubung, Bandar Baru Air Itam, 11500 Ayer Itam, Pulau Pinang",
+    "coordinates": ["5.3968", "100.2829"],
+    "images_url": [
+      "https://lh3.googleusercontent.com/p/AF1QipN_tF1sbXVyzKPXgK_VoZkAOy_NjCS5UaT-gjeG=s1360-w1360-h1020",
+      "https://lh3.googleusercontent.com/p/AF1QipOO8fzafBvDS1CLtt59x-hjV2RaY8M_49yc7t_t=s1360-w1360-h1020"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "AED TAU PEK KONG TEMPLE AIR iTAM DAM ",
+    "address": "Tau Pek Kong Temple, Jalan Air Itam, Air Itam Dam, 11500 Air Itam, Pulau Pinang",
+    "coordinates": ["5.4115", "100.2767"],
+    "images_url": [
+      "https://lh3.googleusercontent.com/p/AF1QipM9C28a9GOjKJBCDCMv2g3XsGKjhfx9yZjKJJd8=s1360-w1360-h1020"
+    ]
+  },
+  {
+    "id": 16,
+    "name": "AED @ Medical Bay St Nicholas' Home Penang",
+    "address": "4, Jalan Bagan Jermal, Pulau Tikus, 10250 George Town, Pulau Pinang",
+    "coordinates": ["5.4352", "100.3089"],
+    "images_url": [
+      "https://lh3.googleusercontent.com/p/AF1QipPXRtmoWd41NOyt4RmI-8kohfcfbBt8VlbaOnzg=s1360-w1360-h1020",
+      "https://lh3.googleusercontent.com/p/AF1QipNmf4ICHpcnzv9FX4TFmCxkxiRRg3E_1KS4I77J=s1360-w1360-h1020"
+    ]
   }
 ]
