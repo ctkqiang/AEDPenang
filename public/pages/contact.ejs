@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title><%= title %> - Contact Us</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        .contact-header {
+            background: linear-gradient(135deg, #1e88e5, #1565c0);
+            color: white;
+            padding: 80px 0;
+        }
+
+        .contact-form {
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            padding: 30px;
+            margin-top: -50px;
+        }
+
+        .contact-info-card {
+            transition: transform 0.3s ease;
+            height: 100%;
+        }
+
+        .contact-info-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .icon-circle {
+            width: 60px;
+            height: 60px;
+            background: #e3f2fd;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .icon-circle i {
+            font-size: 24px;
+            color: #1e88e5;
+        }
+
+        .form-control:focus {
+            border-color: #1e88e5;
+            box-shadow: 0 0 0 0.2rem rgba(30,136,229,0.25);
+        }
+
+        .btn-contact {
+            background: #1e88e5;
+            color: white;
+            padding: 10px 30px;
+            border: none;
+            transition: all 0.3s ease;
+        }
+
+        .btn-contact:hover {
+            background: #1565c0;
+            transform: translateY(-2px);
+        }
+
+        .social-links {
+            margin-top: 30px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #e3f2fd;
+            color: #1e88e5;
+            margin: 0 10px;
+            transition: all 0.3s ease;
+        }
+
+        .social-links a:hover {
+            background: #1e88e5;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .alert-floating {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="/"><i class="bi bi-heart-pulse"></i> <%= title %></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/public/main">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Alert for form submission -->
+    <div class="alert alert-success alert-floating animate__animated animate__fadeInRight" id="successAlert" role="alert">
+        Message sent successfully!
+    </div>
+
+    <!-- Contact Header -->
+    <header class="contact-header">
+        <div class="container text-center">
+            <h1 class="display-4 animate__animated animate__fadeInDown">Contact Us</h1>
+            <p class="lead animate__animated animate__fadeInUp">Have questions about AED locations in Penang? We're here to help!</p>
+        </div>
+    </header>
+
+    <!-- Main Contact Section -->
+    <div class="container mb-5">
+        <div class="row">
+            <!-- Contact Form -->
+            <div class="col-lg-8 mx-auto">
+                <div class="contact-form animate__animated animate__fadeInUp">
+                    <form id="contactForm" onsubmit="return handleSubmit(event)">
+                        <div class="mb-4">
+                            <label for="name" class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="name" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="form-label">Email Address</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" class="form-control" id="subject" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-contact">
+                            Send Message <i class="bi bi-send ms-2"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Information Cards -->
+        <div class="row mt-5 g-4">
+            <div class="col-md-4">
+                <div class="card contact-info-card">
+                    <div class="card-body text-center">
+                        <div class="icon-circle">
+                            <i class="bi bi-envelope"></i>
+                        </div>
+                        <h5 class="card-title">Email Us</h5>
+                        <p class="card-text">ctkqiang96@zohomail.cn</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card contact-info-card">
+                    <div class="card-body text-center">
+                        <div class="icon-circle">
+                            <i class="bi bi-geo-alt"></i>
+                        </div>
+                        <h5 class="card-title">Location</h5>
+                        <p class="card-text">Penang, Malaysia</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card contact-info-card">
+                    <div class="card-body text-center">
+                        <div class="icon-circle">
+                            <i class="bi bi-clock"></i>
+                        </div>
+                        <h5 class="card-title">Working Hours</h5>
+                        <p class="card-text">Monday - Friday<br>9:00 AM - 5:00 PM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Social Links -->
+        <div class="text-center social-links">
+            <h5 class="mb-4">Follow Us</h5>
+            <a href="#" class="social-link"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="social-link"><i class="bi bi-twitter"></i></a>
+            <a href="#" class="social-link"><i class="bi bi-linkedin"></i></a>
+            <a href="#" class="social-link"><i class="bi bi-github"></i></a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2024 <%= title %>. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function handleSubmit(event) {
+            event.preventDefault();
+
+            // Get form data
+            const formData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                subject: document.getElementById('subject').value,
+                message: document.getElementById('message').value
+            };
+
+            // Here you would typically send the data to your server
+            console.log('Form submitted:', formData);
+
+            // Show success message
+            const successAlert = document.getElementById('successAlert');
+            successAlert.style.display = 'block';
+
+            // Hide alert after 3 seconds
+            setTimeout(() => {
+                successAlert.style.display = 'none';
+            }, 3000);
+
+            // Reset form
+            event.target.reset();
+
+            return false;
+        }
+    </script>
+</body>
+</html>
