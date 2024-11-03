@@ -6,7 +6,7 @@
   "scripts": {
     "start": "pm2 start dist/index.js --watch",
     "dev": "nodemon src/index.ts",
-    "build": "tsc",
+    "build": "npx tsc",
     "test": "mocha --require ts-node/register test/**/*.test.ts"
   },
   "repository": {

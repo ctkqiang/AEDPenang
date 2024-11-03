@@ -15,9 +15,8 @@ import { AED } from './models/aed_model';
  * 2. 中间件的配置
  * 3. 路由的设置
  */
-const app: Application = express();
-
-const APP_NAME = process.env.APP_NAME || 'AED PENANG';
+const app: Application = express();                           // 创建一个 Express 应用程序实例
+const APP_NAME: string = process.env.APP_NAME || 'AED PENANG' // 定义应用程序名称，如果环境变量中有设置则使用环境变量，否则默认使用 'AED PENANG'
 
 // 配置中间件
 app.use(cors());                                              // 启用跨域资源共享，允许其他域名访问API

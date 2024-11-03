@@ -6,7 +6,7 @@ import { AED } from '../models/aed_model';
  * @description AED 路由处理模块
  * 负责处理所有与 AED 相关的 HTTP 请求
  */
-const aed = Router();
+const aed = Router();                   // 创建一个新的路由器实例，用于处理 AED 相关的路由
 
 /**
  * @route GET /aed/all

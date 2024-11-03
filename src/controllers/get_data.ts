@@ -17,8 +17,10 @@ const AED_FILE = path.join(__dirname, '../../database/aed.json');
  */
 export function GetAED<T>(): T | null
 {
-  // 在尝试读取之前检查文件是否存在
-  // 如果文件不存在，记录错误并返回 null
+  /**
+  * 在尝试读取之前检查文件是否存在
+  * 如果文件不存在，记录错误并返回 null
+  */
   if (!fs.existsSync(AED_FILE))
   {
     console.error(`文件不存在: ${AED_FILE}`);
