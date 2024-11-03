@@ -4,6 +4,9 @@ import cors from 'cors';
 import aed from './routes/aed';
 import helmet from 'helmet';
 import * as path from 'path';
+import { GetAED } from './controllers/get_data';
+import { AED } from './models/aed_model';
+
 
 /**
  * @description 主应用程序实例配置文件
@@ -22,6 +25,40 @@ app.use(bodyParser.json());                                   // 解析 JSON 格
 app.disable('x-powered-by');                                  // 移除 X-Powered-By 标头，提高安全性
 app.use(cors());                                              // 允许跨域请求，支持前后端分离
 app.use(helmet());                                            // 添加安全相关的 HTTP 头，增强应用安全性
+app.use(
+  helmet({
+    contentSecurityPolicy: {
+      directives: {
+        defaultSrc: ["'self'"],
+        scriptSrc: [
+          "'self'",
+          "'unsafe-inline'",
+          "'unsafe-eval'",
+          "cdn.jsdelivr.net",
+          "unpkg.com",
+          "*.bootstrap.com",
+        ],
+        styleSrc: [
+          "'self'",
+          "'unsafe-inline'",
+          "cdn.jsdelivr.net",
+          "*.bootstrap.com",
+          "cdnjs.cloudflare.com",
+          "*.bootstrapcdn.com",
+        ],
+        imgSrc: ["'self'", "data:", "https:", "blob:"],
+        connectSrc: ["'self'", "https:"],
+        fontSrc: ["'self'", "https:", "data:", "cdnjs.cloudflare.com"],
+        objectSrc: ["'none'"],
+        mediaSrc: ["'self'"],
+        frameSrc: ["'self'"],
+        tileSrc: ["'self'", "https://*.tile.openstreetmap.org"],
+      },
+    },
+    crossOriginEmbedderPolicy: false,
+    crossOriginResourcePolicy: false,
+  })
+);
 
 /**
  * 配置应用程序路由
@@ -56,6 +93,19 @@ app.get('/', (req, res) => {
 
 app.get('/public/main', (req, res) => {
   res.render('index', { title: APP_NAME });
+});
+
+app.get('/public/locate-aed', (req, res) => {
+  const aedData = GetAED<AED[]>();
+
+  res.render('pages/aed', {
+    title: APP_NAME,
+    aedData: aedData || []
+  });
+});
+
+app.get('/public/how-to-use-aed', (req, res) => {
+  res.render('pages/how-to-use-aed', { title: APP_NAME });
 });
 
 app.get('/public/pages/contact', (req, res) => {

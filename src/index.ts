@@ -18,5 +18,5 @@ if (PORT === "443")
 }
 
 app.listen(PORT, () => {
-  console.log(`AED Server is running on http://localhost:${PORT}`);
+  console.log(`AED 服务器正在运行，访问地址: http://localhost:${PORT}`);
 });

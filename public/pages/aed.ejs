@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %> - AED Locations</title>
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <style>
+        #map {
+            height: 80vh;
+            width: 100%;
+        }
+        .container {
+            padding: 20px;
+        }
+        .popup-content img {
+            max-width: 200px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>AED Locations in Penang</h1>
+        <div id="map"></div>
+    </div>
+
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        // Initialize the map
+        const map = L.map('map').setView([5.4164, 100.3327], 12); // Penang coordinates
+
+        // Add OpenStreetMap tiles
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Fetch AED data from your API
+        fetch('/api/aed/all')
+            .then(response => response.json())
+            .then(data => {
+                data.forEach(aed => {
+                    // Convert coordinates from strings to numbers
+                    const lat = parseFloat(aed.coordinates[0]);
+                    const lng = parseFloat(aed.coordinates[1]);
+
+                    // Create popup content including images if available
+                    let popupContent = `
+                        <div class="popup-content">
+                            <strong>${aed.name}</strong><br>
+                            Address: ${aed.address}<br>
+                    `;
+
+                    // Add images if available
+                    if (aed.images_url && aed.images_url.length > 0) {
+                        popupContent += `<img src="${aed.images_url[0]}" alt="Location image">`;
+                    }
+
+                    popupContent += '</div>';
+
+                    // Create marker for each AED location
+                    L.marker([lat, lng])
+                        .bindPopup(popupContent)
+                        .addTo(map);
+                });
+            })
+            .catch(error => console.error('Error loading AED data:', error));
+    </script>
+</body>
+</html>
