@@ -1,162 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title><%= title %> - AED Locations</title>
-    <meta
-      http-equiv="Content-Security-Policy"
-      content="style-src 'self' 'unsafe-inline' cdn.jsdelivr.net *.bootstrap.com cdnjs.cloudflare.com *.bootstrapcdn.com unpkg.com"
-    >
+    <title><%= title %> - AED Locations </title>
+    <meta http-equiv="Content-Security-Policy" content="style-src 'self' 'unsafe-inline' cdn.jsdelivr.net *.bootstrap.com cdnjs.cloudflare.com *.bootstrapcdn.com unpkg.com;">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-
     <style>
-        .hero-section {
-            background: linear-gradient(135deg, #1e88e5, #1565c0);
-            color: white;
-            padding: 80px 0 20px 0;
-        }
-        .map-container {
-            height: 70vh;
-            margin: 20px 0;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        #map {
-            height: 100%;
-            width: 100%;
-        }
-        .popup-content {
-            padding: 10px;
-        }
-        .popup-content img {
-            max-width: 200px;
-            margin-top: 10px;
-            border-radius: 5px;
-        }
-        .location-info {
-            background: white;
-            border-radius: 10px;
-            padding: 20px;
-            margin-top: 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-        .icon-large {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            color: #1e88e5;
-        }
+      .hero-section {
+        background: linear-gradient(135deg, #1e88e5, #1565c0);
+        color: white;
+        padding: 80px 0 20px 0;
+      }
+
+      .map-container {
+        height: 70vh;
+        margin: 20px 0;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      #map {
+        height: 100%;
+        width: 100%;
+      }
+
+      .popup-content {
+        padding: 10px;
+        min-width: 250px;
+        max-width: 300px;
+      }
+
+      .popup-content .btn {
+        color: white;
+        margin-top: 10px;
+        margin-bottom: 10px;
+      }
+
+      .popup-images {
+        margin: 10px 0;
+      }
+
+      .popup-images img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 5px;
+        margin: 5px 0;
+        display: block;
+      }
+
+      .carousel {
+        margin: 10px 0;
+        border-radius: 5px;
+        overflow: hidden;
+      }
+
+      .carousel-item img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 5px;
+      }
+
+      .carousel-control-prev,
+      .carousel-control-next {
+        width: 10%;
+        background: rgba(0, 0, 0, 0.2);
+      }
+
+      .location-info {
+        background: white;
+        border-radius: 10px;
+        padding: 20px;
+        margin-top: 20px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .icon-large {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        color: #1e88e5;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand" href="/public/main"><i class="bi bi-heart-pulse"></i> <%= title %></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/public/main">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/public/pages/contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
+      <div class="container">
+        <a class="navbar-brand" href="/public/main">
+          <i class="bi bi-heart-pulse"></i><%= title %> </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/public/main">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/public/pages/contact">Contact</a>
+            </li>
+          </ul>
         </div>
+      </div>
     </nav>
-
     <!-- Hero Section -->
     <section class="hero-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center animate__animated animate__fadeInDown">
-                    <h1 class="display-4 fw-bold mb-4">AED Locations in Penang</h1>
-                    <p class="lead">Find the nearest Automated External Defibrillator (AED) in your area</p>
-                </div>
-            </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 text-center animate__animated animate__fadeInDown">
+            <h1 class="display-4 fw-bold mb-4">AED Locations in Penang</h1>
+            <p class="lead">Find the nearest Automated External Defibrillator (AED) in your area</p>
+          </div>
         </div>
+      </div>
     </section>
-
     <!-- Map Section -->
     <section class="py-4">
-        <div class="container">
-            <div class="map-container animate__animated animate__fadeIn">
-                <div id="map"></div>
-            </div>
-            <div class="location-info">
-                <h4><i class="bi bi-info-circle"></i> How to Use</h4>
-                <p>Click on any marker to view detailed information about the AED location, including:</p>
-                <ul>
-                    <li>Location name and address</li>
-                    <li>Images of the location (where available)</li>
-                    <li>Points of interest nearby</li>
-                </ul>
-            </div>
+      <div class="container">
+        <div class="map-container animate__animated animate__fadeIn">
+          <div id="map"></div>
         </div>
+        <div class="location-info">
+          <h4>
+            <i class="bi bi-info-circle"></i> How to Use
+          </h4>
+          <p>Click on any marker to view detailed information about the AED location, including:</p>
+          <ul>
+            <li>Location name and address</li>
+            <li>Images of the location (where available)</li>
+            <li>Points of interest nearby</li>
+          </ul>
+        </div>
+      </div>
     </section>
-
     <!-- Footer -->
     <footer class="bg-dark text-white py-4 mt-5">
-        <div class="container text-center">
-            <p class="mb-0">&copy; 2024 <%= title %>. All rights reserved.</p>
-        </div>
+      <div class="container text-center">
+        <p class="mb-0">&copy; 2025 <%= title %>. All rights reserved. 上饶满星科技 </p>
+      </div>
     </footer>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
-        // Initialize the map
-        const map = L.map('map').setView([5.4164, 100.3327], 12);
+      // Initialize map
+      const map = L.map('map').setView([5.4164, 100.3327], 12);
+      sessionStorage.removeItem('modalShown');
+      // Add tile layer
+      L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
+        attribution: '&copy;  < a href = "https://www.openstreetmap.org/copyright" > OpenStreetMap < /a> contributors'
+      }).addTo(map);
+      // Function to create carousel HTML
+      function createCarouselHTML(images, aedId) {
+        let html = `
 
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-        }).addTo(map);
+										<div id="carousel-${aedId}" class="carousel slide" data-bs-ride="carousel">
+											<div class="carousel-inner">
+        `;
+        images.forEach((img, index) => {
+          html += `
 
-        // Fetch AED data
-        fetch('/api/aed/all')
-            .then(response => response.json())
-            .then(data => {
-                data.forEach(aed => {
-                    if (aed.coordinates && aed.coordinates.length === 2) {
-                        const lat = parseFloat(aed.coordinates[0]);
-                        const lng = parseFloat(aed.coordinates[1]);
+												<div class="carousel-item ${index === 0 ? 'active' : ''}">
+													<img src="${img}" class="d-block w-100" alt="Location image ${index + 1}">
+													</div>
+          `;
+        });
+        html += `
 
-                        if (!isNaN(lat) && !isNaN(lng)) {
-                            let popupContent = `
-                                <div class="popup-content">
-                                    <h5>${aed.name}</h5>
-                                    <p><strong>Address:</strong> ${aed.address}</p>
-                            `;
+												</div>
+												<button class="carousel-control-prev" type="button" data-bs-target="#carousel-${aedId}" data-bs-slide="prev">
+													<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+													<span class="visually-hidden">Previous</span>
+												</button>
+												<button class="carousel-control-next" type="button" data-bs-target="#carousel-${aedId}" data-bs-slide="next">
+													<span class="carousel-control-next-icon" aria-hidden="true"></span>
+													<span class="visually-hidden">Next</span>
+												</button>
+											</div>
+        `;
+        return html;
+      }
+      // Fetch and display AED locations
+      fetch('/api/aed/all').then(response => response.json()).then(data => {
+        data.forEach(aed => {
+          if (aed.coordinates && aed.coordinates.length === 2) {
+            const lat = parseFloat(aed.coordinates[0]);
+            const lng = parseFloat(aed.coordinates[1]);
+            if (!isNaN(lat) && !isNaN(lng)) {
+              let popupContent = `
 
-                            if (aed.images_url && aed.images_url.length > 0) {
-                                popupContent += `<img src="${aed.images_url[0]}" alt="Location image">`;
-                            }
+											<div class="popup-content">
+												<h5>${aed.name}</h5>
+												<p>
+													<strong>Address:</strong> ${aed.address}
+												</p>
+                `;
+              // Add images
+              if (aed.images_url && aed.images_url.length > 0) {
+                if (aed.images_url.length === 1) {
+                  popupContent += `
 
-                            if (aed.poi && aed.poi.length > 0) {
-                                popupContent += `<p><strong>Nearby:</strong> ${aed.poi.join(', ')}</p>`;
-                            }
+												<div class="popup-images">
+													<img src="${aed.images_url[0]}" alt="Location image">
+													</div>
+                    `;
+                } else {
+                  popupContent += createCarouselHTML(aed.images_url, aed.id);
+                }
+              }
+              // Add navigation button
+              popupContent += `
 
-                            popupContent += '</div>';
+													<div class="mt-2">
+														<a href="https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}"
+                       class="btn btn-primary w-100"
+                       target="_blank">
+															<i class="bi bi-geo-alt"></i> Navigate with Google Maps
 
-                            L.marker([lat, lng])
-                                .bindPopup(popupContent)
-                                .addTo(map);
-                        }
-                    }
-                });
-            })
-            .catch(error => {
-                console.error('Error loading AED data:', error);
-                alert('Error loading AED locations. Please try again later.');
-            });
+														</a>
+													</div>
+                `;
+              // Add POIs
+              if (aed.poi && aed.poi.length > 0) {
+                popupContent += `
+
+													<p>
+														<strong>Nearby:</strong> ${aed.poi.join(', ')}
+													</p>
+                  `;
+              }
+              popupContent += ' < /div>';
+              // Create marker and popup
+              const marker = L.marker([lat, lng]).addTo(map);
+              const popup = L.popup({
+                maxWidth: 300,
+                minWidth: 250,
+                className: 'custom-popup'
+              }).setContent(popupContent);
+              marker.bindPopup(popup);
+              // Initialize carousel when popup opens
+              marker.on('popupopen', () => {
+                if (aed.images_url && aed.images_url.length > 1) {
+                  new bootstrap.Carousel(document.querySelector(`#carousel-${aed.id}`));
+                }
+              });
+            }
+          }
+        });
+      }).catch(error => {
+        console.error('Error loading AED data:', error);
+      });
     </script>
-</body>
+  </body>
 </html>
