@@ -84,11 +84,15 @@ app.set('views', path.join(__dirname, '../public'));          // 设置视图文
 app.use('/api/aed', aed);                                     // AED 相关的路由配置
 
 // 根路由处理
-app.get('/', (req, res) => {
+app.get('/api/', (req, res) => {
   res.send({
     message: '欢迎访问上饶满星科技接口服务！',
     message_from_developer: '技术支持联系方式: ctkqiang96@zohomail.cn'
   });
+});
+
+app.get('/', (req, res) => {
+  res.redirect(301, '/public/main');
 });
 
 app.get('/public/main', (req, res) => {
