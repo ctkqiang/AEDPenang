@@ -17,11 +17,11 @@ const app: Application = express();
 const APP_NAME = process.env.APP_NAME || 'AED PENANG';
 
 // 配置中间件
-app.use(cors());               // 启用跨域资源共享，允许其他域名访问API
-app.use(bodyParser.json());    // 解析 JSON 格式的请求体数据
-app.disable('x-powered-by');   // 移除 X-Powered-By 标头，提高安全性
-app.use(cors());               // 允许跨域请求，支持前后端分离
-app.use(helmet());             // 添加安全相关的 HTTP 头，增强应用安全性
+app.use(cors());                                              // 启用跨域资源共享，允许其他域名访问API
+app.use(bodyParser.json());                                   // 解析 JSON 格式的请求体数据
+app.disable('x-powered-by');                                  // 移除 X-Powered-By 标头，提高安全性
+app.use(cors());                                              // 允许跨域请求，支持前后端分离
+app.use(helmet());                                            // 添加安全相关的 HTTP 头，增强应用安全性
 
 /**
  * 配置应用程序路由
@@ -44,7 +44,7 @@ app.set('views', path.join(__dirname, '../public'));          // 设置视图文
  * - GET /aed/all：获取所有AED位置
  * - GET /aed/:id：获取特定ID的AED信息
  */
-app.use('/aed', aed);                                          // AED 相关的路由配置
+app.use('/api/aed', aed);                                     // AED 相关的路由配置
 
 // 根路由处理
 app.get('/', (req, res) => {

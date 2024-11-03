@@ -30,11 +30,12 @@
   },
   {
     "id": 3,
-    "name": "AED @ Karpal Singh Drive",
+    "name": "AED @ Maritime Block A Karpal Singh Drive",
     "address": "Karpal Singh Drive, 11600 George Town, Pulau Pinang",
     "coordinates": ["5.398160", "100.323760"],
     "images_url": [
-      "https://www.buletinmutiara.com/wp-content/uploads/2021/11/AED-Karpal-Singh-Drive.jpg"
+      "",
+      ""
     ]
   },
   {
@@ -51,6 +52,13 @@
     "name": "AED @ Sri Ramar Temple",
     "address": "Solok York, 10450 George Town, Pulau Pinang",
     "coordinates": ["5.416670", "100.311670"],
+    "images_url": []
+  },
+  {
+    "id": 5,
+    "name": "AED @ Taman Botani",
+    "address": "Jalan Kebun Bunga, 10350 George Town, Pulau Pinang",
+    "coordinates": ["5.431940", "100.290280"],
     "images_url": []
   },
   {

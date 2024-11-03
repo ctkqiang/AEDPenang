@@ -17,7 +17,6 @@ aed.get('/all', (req, res) => {
   const data = GetAED<AED>();
 
   console.info(`GET::[/aed/all]`);   // 记录请求日志
-
   res.send(data);                    // 发送响应数据
 });
 
