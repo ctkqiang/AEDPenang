@@ -44,6 +44,7 @@ app.use(
           "*.bootstrap.com",
           "cdnjs.cloudflare.com",
           "*.bootstrapcdn.com",
+          "unpkg.com"
         ],
         imgSrc: ["'self'", "data:", "https:", "blob:"],
         connectSrc: ["'self'", "https:"],
