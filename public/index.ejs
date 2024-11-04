@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title><%= title %> </title>
+    <link rel="icon" href="https://t3.ftcdn.net/jpg/02/33/47/40/360_F_233474036_NMfkCNkCaQq6eIIYuSg6CwcYWIWfPFNd.jpg" />
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="Find the nearest Automated External Defibrillator (AED) locations in Penang. Quick access to life-saving equipment with real-time locations, visual guidance, and detailed information.">
@@ -14,6 +15,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="manifest" href="/manifest.json">
     <style>
       @media (max-width: 768px) {
 
@@ -453,6 +455,15 @@
       }
       const userLanguage = navigator.language || navigator.userLanguage;
       console.log(userLanguage);
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/scripts/sw.js').then(registration => {
+            console.log('ServiceWorker registered:', registration);
+          }).catch(error => {
+            console.log('ServiceWorker registration failed:', error);
+          });
+        });
+      }
     </script>
   </body>
 </html>
