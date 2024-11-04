@@ -28,7 +28,7 @@
       }
 
       .feature-card:hover {
-        transform: translateY(-10px);
+        transform: translateY(-20px);
       }
 
       .icon-large {
@@ -37,8 +37,55 @@
         color: #1e88e5;
       }
 
+      .screenshot {
+        border-radius: 20px;
+        overflow: hidden;
+        transition: all 0.5s ease-in-out;
+        transform: perspective(1000px) rotateY(-5deg);
+        backdrop-filter: blur(30px);
+        position: relative;
+      }
+
+      .screenshot:hover {
+        border-radius: 20px;
+        transform: perspective(1000px) rotateY(15deg) translateY(-20px); /* Reduced rotation and translation for subtlety */
+      }
+
+      .screenshot img {
+        border-radius: 20px;
+        width: 100%;
+        height: auto;
+        backdrop-filter: blur(30px);
+        transition: all 0.5s ease-in-out;
+      }
+
+      .screenshot img:hover {
+        border-radius: 20px;
+        backdrop-filter: blur(30px);
+        transform: scale(1.1); /* Reduced scale for smoother effect */
+      }
+
+      /* Add smooth animation */
+      @keyframes float {
+        0% {
+          transform: perspective(1000px) rotateY(-5deg) translateY(0);
+        }
+        50% {
+          transform: perspective(1000px) rotateY(5deg) translateY(-10px);
+        }
+        100% {
+          transform: perspective(1000px) rotateY(-5deg) translateY(0);
+        }
+      }
+
+      /* Pause the floating animation when hovering */
+      .screenshot:hover {
+        animation-play-state: paused;
+      }
+
       .fade-in {
-        animation: fadeIn 1s ease-in;
+        animation: fadeIn 10s ease-in;
+        border-radius: 20px;
       }
 
       @keyframes pulse {
@@ -47,7 +94,7 @@
         }
 
         50% {
-          transform: scale(1.05);
+          transform: scale(1.02);
         }
 
         100% {
@@ -56,7 +103,7 @@
       }
 
       .pulse {
-        animation: pulse 2s infinite;
+        animation: pulse 3s infinite;
       }
     </style>
   </head>
@@ -87,6 +134,7 @@
         </div>
       </div>
     </nav>
+
     <!-- Sponsorship Modal -->
     <div class="modal fade" id="sponsorshipModal" tabindex="-1" aria-labelledby="sponsorshipModalLabel" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered">
@@ -107,6 +155,7 @@
         </div>
       </div>
     </div>
+
     <!-- Hero Section -->
     <section class="hero-section d-flex align-items-center">
       <div class="container">
@@ -118,8 +167,8 @@
               <button class="btn btn-light btn-lg pulse">Find Nearest AED</button>
             </a>
           </div>
-          <div class="col-lg-6 animate__animated animate__fadeInRight">
-            <img src="/assets/screenshot.png" alt="AED Location Map" class="img-fluid rounded shadow">
+          <div class="screenshot col-lg-6 animate__animated animate__fadeInRight">
+            <img src="/assets/screenshot.png" alt="AED Location Map" class="screenshot  img-fluid rounded shadow">
           </div>
         </div>
       </div>
@@ -259,6 +308,11 @@
         const modal = new bootstrap.Modal(modalEl);
         modal.show();
       }
+
+      const userLanguage = navigator.language || navigator.userLanguage;
+
+      console.log(userLanguage);
+
     </script>
   </body>
 </html>
