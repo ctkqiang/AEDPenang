@@ -85,6 +85,87 @@
         margin-bottom: 1rem;
         color: #1e88e5;
       }
+
+      .custom-popup .leaflet-popup-content-wrapper {
+          background: #ffffff;
+          color: #333333;
+          border-radius: 10px;
+          box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      .custom-popup .leaflet-popup-content {
+          margin: 12px;
+      }
+
+      .custom-popup .leaflet-popup-tip-container {
+          margin-top: -1px;
+      }
+
+      .custom-popup .leaflet-popup-tip {
+          background: #ffffff;
+          box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+      }
+
+      /* Popup header */
+      .custom-popup h5 {
+          color: #1e88e5;  /* Match your theme blue color */
+          margin-bottom: 10px;
+          font-weight: 600;
+      }
+
+      /* Popup content */
+      .custom-popup p {
+          margin-bottom: 8px;
+          color: #4a4a4a;
+      }
+
+      /* Strong text in popup */
+      .custom-popup strong {
+          color: #2196F3;
+      }
+
+      /* Navigation button in popup */
+      .custom-popup .btn-primary {
+          background-color: #1e88e5;
+          border-color: #1e88e5;
+          transition: all 0.3s ease;
+      }
+
+      .custom-popup .btn-primary:hover {
+          background-color: #1565c0;
+          border-color: #1565c0;
+          transform: translateY(-2px);
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Images in popup */
+      .custom-popup .popup-images img {
+          border: 2px solid #f5f5f5;
+          transition: transform 0.3s ease;
+      }
+
+      .custom-popup .popup-images img:hover {
+          transform: scale(1.02);
+      }
+
+      /* Carousel in popup */
+      .custom-popup .carousel {
+          border: 2px solid #f5f5f5;
+          border-radius: 8px;
+      }
+
+      /* Close button */
+      .custom-popup .leaflet-popup-close-button {
+          color: #1e88e5;
+          font-size: 20px;
+          padding: 5px;
+          transition: all 0.3s ease;
+      }
+
+      .custom-popup .leaflet-popup-close-button:hover {
+          color: #1565c0;
+          transform: scale(1.1);
+      }
     </style>
   </head>
   <body>

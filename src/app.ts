@@ -108,6 +108,10 @@ app.get('/public/locate-aed', (req, res) => {
   });
 });
 
+app.get('/public/about', (req, res) => {
+  res.render('pages/about', { title: APP_NAME });
+});
+
 app.get('/public/how-to-use-aed', (req, res) => {
   res.render('pages/how-to-use-aed', { title: APP_NAME });
 });
